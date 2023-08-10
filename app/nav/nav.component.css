@@ -1,0 +1,6 @@
+.notLogged.hidden{
+    visibility: hidden;
+}
+.notLogged.visible{
+    visibility: visible;
+}

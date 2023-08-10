@@ -1,0 +1,66 @@
+<br/>
+<div class="container">
+    <div class="p-5 my-4 bg-light rounded-3">
+        <h1>Edit Profile</h1>
+        <p class="lead">Salami spare ribs sausage tongue pork chop ground round jowl ribeye leberkas shank. Ball tip alcatra shank ribeye pig sirloin pancetta jowl burgdoggen, boudin hamburger chuck porchetta bacon swine. Short loin cupim kevin, landjaeger chuck alcatra turducken buffalo pork chop doner ham short ribs rump pork loin.
+            
+        </p>
+        <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
+            <!-- Id input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="id" class="form-control" name="id" [formControlName]="'id'" readonly />
+              <label class="form-label" for="id">Customer Id</label>
+            </div> 
+          
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" class="form-control" [formControlName]="'email'" name="email" readonly />
+              <label class="form-label" for="email">Email address</label>
+            </div>
+          
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="bio" rows="4" [formControlName]="'bio'" name="bio"></textarea>
+              <label class="form-label" for="bio">Biography</label>
+            </div>
+          
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form44" checked />
+              <label class="form-check-label" for="form44">
+                Send me a copy
+              </label>
+            </div>
+          
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+          </form>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Git Repository</h2>
+            <p>Bacon ipsum dolor amet pork chop doner andouille, chicken pork belly beef cow ham hock salami swine spare ribs prosciutto strip steak tail flank.</p>
+            <p><a href="#" target="_blank" class="btn btn-success">Get the code &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <h2>About Me</h2>
+            <p>Spare ribs pastrami andouille, meatball swine pork belly chicken rump tenderloin leberkas short ribs kielbasa.</p>
+            <p><a href="#" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Copyright &copy; 2023 FelipeRod</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-dark">Terms of Use</a> 
+                <span class="text-muted mx-2">|</span> 
+                <a href="#" class="text-dark">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</div>

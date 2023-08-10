@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">POC</a>
+      
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <div class="notLogged" [ngClass]="{'hidden':!isUserLogged}">
+              <a class="nav-link active" (click)="logOut()">LogOut {{loggedMail}}</a>
+            </div>
+          </li>
+        </ul>
+        <div class="notLogged" [ngClass]="{'hidden':isUserLogged}">
+          <form #loginForm = "ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
+            <input class="form-control me-2" type="text" 
+                 placeholder="Username" name="username" [(ngModel)]="model.username">
+            <input class="form-control me-2" type="password" 
+                 placeholder="Password" name="password" [(ngModel)]="model.password">
+            <button class="btn btn-outline-success" type="submit" [disabled]="isUserLogged">Login</button>
+          </form>
+      </div>
+    </div>
+  </nav>
