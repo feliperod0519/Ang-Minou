@@ -2,9 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { AuthenticationService } from './authentication.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { Person } from '../models/person';
 
 describe('AuthenticationService', () => {
   let authenticationService: AuthenticationService;
