@@ -19,7 +19,7 @@ describe('AuthenticationService', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
-  fit('should log in', () => {
+  it('should log in', () => {
     //expect(service).toBeTruthy();
     authenticationService.login('minou@cat-tv.ca','hello').pipe(first()).subscribe((x)=>{
       expect(x).toBeTruthy();
@@ -31,7 +31,7 @@ describe('AuthenticationService', () => {
     req.flush({...{"id":0,"email":'',"bio":""},...{"id":1,"email":'minou@cat-tv.ca',"bio":'soy un gato'}})
   });
 
-  fit('should give an error if login info is incorrect',()=>{
+  it('should give an error if login info is incorrect',()=>{
     authenticationService.login('minou@cat-tv.ca','hello-').pipe(first()).subscribe(
       ()=>{fail('login failed');},
       (err:HttpErrorResponse)=>{ expect(err.status).toBe(403); }
