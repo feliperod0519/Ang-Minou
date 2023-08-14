@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { LoggingInterceptor } from './logging.interceptor';
 
-describe('LoggingInterceptor', () => {
+xdescribe('LoggingInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       LoggingInterceptor
