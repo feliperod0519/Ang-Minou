@@ -6,6 +6,7 @@ import { Person } from '../models/person';
 import { first } from 'rxjs/operators';
 import { PeopleService } from '../services/people.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,8 @@ export class ProfileComponent implements OnInit {
   editProfileForm: FormGroup = new FormGroup({});
 
   constructor(private authenticationService:AuthenticationService,
-              private peopleService: PeopleService, private router:Router) {  
+              private peopleService: PeopleService, private router:Router,
+              private notificationService: NotificationService) {  
   }
   
   ngOnInit(): void {
@@ -38,7 +40,8 @@ export class ProfileComponent implements OnInit {
   onSubmit(){
     var p: Person = this.editProfileForm.value;
     this.peopleService.updateInfoProfile(p);
-    this.router.navigate(['']);
+    this.notificationService.showSuccess("Successful update for " + p.email,"Successful Update!");
+    //this.router.navigate(['']);
   }
 
 }

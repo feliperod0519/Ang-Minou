@@ -19,7 +19,7 @@ describe('PeopleService', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
-  xit('should update info', () => {
+  it('should update info', () => {
     const minou: Person = {id:1,email:'minou@cat-tv.ca',bio:'I am a cat'};
     peopleService.updateInfoProfile(minou);
     const req = httpTestingController.expectOne("http://localhost:8000/api/updateInfo");
@@ -34,7 +34,7 @@ describe('PeopleService', () => {
     const fakeMinou: Person = {id:9,email:'minou@cat-tv.ca',bio:'I am a cat'};
 
     
-    expect(()=>peopleService.updateInfoProfile(fakeMinou)).toThrow(new HttpErrorResponse({status:500, statusText:'Internal Server Error'}));
+    expect(()=>peopleService.updateInfoProfile(fakeMinou)).toThrowError('Internal Server Error :)');
     
     const req = httpTestingController.expectOne("http://localhost:8000/api/updateInfo");
     expect(req.request.method).toEqual("POST");
@@ -43,7 +43,7 @@ describe('PeopleService', () => {
     expect(req.request.body.bio).toEqual(fakeMinou.bio);
     req.flush('Update failed', {
       status:500,
-      statusText:'Internal Server Error'           
+      statusText:'Internal Server Error :)'          
      });
   });
 

@@ -3,6 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Person } from '../models/person';
 import { first } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-nav',

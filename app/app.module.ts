@@ -14,6 +14,9 @@ import { LoggingService } from '../app/services/logging.service';
 import { ConsoleLoggingService } from '../app/services/console-logging.service';
 import { HomeComponent } from './home/home.component';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     FormsModule, 
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ {provide: LoggingService, useClass: ConsoleLoggingService},
                {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true}

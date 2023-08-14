@@ -19,7 +19,7 @@ export class PeopleService {
       console.error(
         `Backend returned code ${error.status}, body was: `, error.error);
     }
-    return throwError(() => new HttpErrorResponse({status:500, statusText:'Internal Server Error'}));
+    return throwError(() => new HttpErrorResponse({status:500, statusText:'Internal Server Error :)'}));
   }
 
   constructor(private http:HttpClient) { }
